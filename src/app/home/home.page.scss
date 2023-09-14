@@ -25,3 +25,23 @@
 #container a {
   text-decoration: none;
 }
+
+#avatar{
+  margin: auto;
+  width: 200px;
+  height: 200px;
+}
+
+
+ion-button {
+  --background: #7ad172;
+  --background-hover: #7ad172;
+  --background-activated: #7ad172;
+  --background-focused: #7ad172;
+  
+  --color: white;
+  --ripple-color: deeppink;
+  width: 250px;
+  --padding-top: 20px;
+  --padding-bottom: 20px;
+}
