@@ -45,3 +45,14 @@ ion-button {
   --padding-top: 20px;
   --padding-bottom: 20px;
 }
+
+ion-card{
+  --background: rgb(214, 214, 214);
+}
+
+ion-list{
+  --background: #7ad172;
+  --background-hover: #7ad172;
+  --background-activated: #7ad172;
+  --background-focused: #7ad172;
+}

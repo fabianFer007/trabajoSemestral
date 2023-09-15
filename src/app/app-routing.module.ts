@@ -10,7 +10,11 @@ const routes: Routes = [
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
+  },  {
+    path: 're-pass',
+    loadChildren: () => import('./re-pass/re-pass.module').then( m => m.RePassPageModule)
   },
+
 ];
 
 @NgModule({

@@ -1,9 +1,5 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Menu
-    </ion-title>
-  </ion-toolbar>
+  <!-- encabezado -->
 </ion-header>
 
 <ion-content [fullscreen]="true">
@@ -13,6 +9,7 @@
     </ion-toolbar>
   </ion-header>
 
+  <!-- Container -->
   <div id="container">
     <ion-avatar id="avatar" #avatar>
       <img alt="Silhouette of a person's head"
@@ -21,24 +18,24 @@
 
     <ion-card>
       <ion-card-header>
-        <ion-card-title>Credenciales</ion-card-title>
+        <ion-card-title>Acceso</ion-card-title>
       </ion-card-header>
       <ion-card-content>
         <ion-list>
           <!-- Input de Nombre -->
           <ion-item>
-            <ion-input [(ngModel)]="user.usuario" label="Nombre Usuario" labelPlacement="floating"
-              placeholder="Ingrese su Usuario"></ion-input>
+            <ion-input [(ngModel)]="user.usuario" label="Dirección de Correo" labelPlacement="floating"
+              placeholder="Correo"></ion-input>
             </ion-item>
             <!-- Input de Contraseña -->
             <ion-item>
               <ion-input [(ngModel)]="user.password" label="Contraseña" type="password" labelPlacement="floating"
-                placeholder="Ingrese su Contraseña">
+                placeholder="Contraseña">
               </ion-input>
             </ion-item>
             <!-- Recuerdame -->
             <ion-item>
-              <ion-toggle aria-label="Success toggle" color="success" [checked]="true">Recuerdame</ion-toggle>
+              <ion-toggle aria-label="Success toggle" color="success" [checked]="true">Recordar Usuario</ion-toggle>
             </ion-item>
             <br>
             <!-- Barra de carga -->
