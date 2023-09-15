@@ -53,6 +53,12 @@ export class HomePage {
       this.mensaje = "Debe ingresar sus credenciales";
     }
   }
+  irRestablecer(){
+    let navigationExtras: NavigationExtras = {
+      state: { user: this.user }
+    }
+    this.router.navigate(['/login'], navigationExtras);
+  }
   mostrarConsola() {
     console.log(this.user);
     if (this.user.usuario != "" && this.user.password != "") {

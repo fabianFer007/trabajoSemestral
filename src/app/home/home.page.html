@@ -35,20 +35,17 @@
             </ion-item>
             <!-- Recuerdame -->
             <ion-item>
-              <ion-toggle aria-label="Success toggle" color="success" [checked]="true">Recordar Usuario</ion-toggle>
+              <ion-checkbox>Recordar Usuario</ion-checkbox>
             </ion-item>
             <br>
+            <ion-button color="primary" href="/re-pass">¿La olvidaste?</ion-button>
             <!-- Barra de carga -->
             <ion-item>
               <mat-progress-bar mode="indeterminate"></mat-progress-bar>
             </ion-item>
             <!-- Boton que redirigue a Home -->
-            <ion-button (click)="enviarInformacion()" size="small" shape="round">Conectar</ion-button><br>
-            <br>
-            <ion-button shape="round" size="small">
-            Registrarse
-            </ion-button><br>
-          
+            <ion-button (click)="enviarInformacion()" size="small" shape="round">Conectar</ion-button>
+            <br><br>
         </ion-list>
       </ion-card-content>
     </ion-card>
