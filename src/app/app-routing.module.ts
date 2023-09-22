@@ -14,6 +14,10 @@ const routes: Routes = [
     path: 're-pass',
     loadChildren: () => import('./re-pass/re-pass.module').then( m => m.RePassPageModule)
   },
+  {
+    path: 'inicio',
+    loadChildren: () => import('./inicio/inicio.module').then( m => m.InicioPageModule)
+  },
 
 ];
 
