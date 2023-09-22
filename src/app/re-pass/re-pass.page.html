@@ -1,6 +1,9 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>rePass</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button default-href="#"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Volver</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -30,7 +33,8 @@
                 placeholder="Contraseña">
               </ion-input>
             </ion-item>
-            
+            <!-- Boton que redirigue a Home --> <br>
+            <ion-button size="small"  id="btnIngresar" #btnIngresar>Ingresar</ion-button>
             
             
           

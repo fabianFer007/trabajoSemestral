@@ -33,23 +33,24 @@
 }
 
 
-ion-button {
+#btnIngresar {
   --background: #7ad172;
   --background-hover: #7ad172;
   --background-activated: #7ad172;
   --background-focused: #7ad172;
   
   --color: white;
-  --ripple-color: deeppink;
+  --ripple-color: rgb(0, 97, 24);
   width: 250px;
   --padding-top: 20px;
   --padding-bottom: 20px;
 }
 
 ion-card{
-  --background: rgb(214, 214, 214);
+  padding-bottom: 10px;
 }
 
-ion-text{
-  margin-right: 230px;
+#enlaceRe{
+  margin-right: 250px;
 }
+

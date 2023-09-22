@@ -23,29 +23,26 @@
       <ion-card-content>
         <ion-list>
           <!-- Input de Nombre -->
-          <ion-item>
-            <ion-input [(ngModel)]="user.usuario" label="Dirección de Correo" labelPlacement="floating"
-              placeholder="Correo"></ion-input>
+            <ion-item>
+              <ion-input [(ngModel)]="user.usuario" label="Dirección de Correo" labelPlacement="floating"
+                placeholder="Correo"></ion-input>
             </ion-item>
-            <!-- Input de Contraseña -->
+          <!-- Input de Contraseña -->
             <ion-item>
               <ion-input [(ngModel)]="user.password" label="Contraseña" type="password" labelPlacement="floating"
                 placeholder="Contraseña">
               </ion-input>
             </ion-item>
-            <!-- Recuerdame -->
+          <!-- Recuerdame -->
             <ion-item>
               <ion-checkbox>Recordar Usuario</ion-checkbox>
             </ion-item>
-            <br>
-            <ion-button color="primary" href="/re-pass">¿La olvidaste?</ion-button>
-            <!-- Barra de carga -->
-            <ion-item>
-              <mat-progress-bar mode="indeterminate"></mat-progress-bar>
-            </ion-item>
-            <!-- Boton que redirigue a Home -->
-            <ion-button (click)="enviarInformacion()" size="small" shape="round">Conectar</ion-button>
-            <br><br>
+          <!-- Enlace recuperar contraseña --> <br><br>
+            <a [routerLink]="['/re-pass']" id="enlaceRe" #enlaceRe>¿La olvidaste?</a>
+          <!-- Barra de carga --> <br><br>
+            <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+          <!-- Boton que redirigue a Home --> <br>
+            <ion-button (click)="enviarInformacion()" size="small"  id="btnIngresar" #btnIngresar>Ingresar</ion-button>
         </ion-list>
       </ion-card-content>
     </ion-card>
