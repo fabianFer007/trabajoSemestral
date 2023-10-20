@@ -1,8 +1,9 @@
-import { Component,ViewChild,ElementRef } from '@angular/core';
+import { Component,ViewChild,ElementRef, OnInit } from '@angular/core';
 import { Router, NavigationExtras } from '@angular/router';
 import { IonAvatar,IonModal } from '@ionic/angular';
 import type { Animation } from '@ionic/angular';
 import { AnimationController } from '@ionic/angular';
+import { ApiService } from '../servicios/api.service';
 
 @Component({
   selector: 'app-home',
