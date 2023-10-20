@@ -18,7 +18,7 @@ export class ApiService {
     })
   }
 
-  apiURL = 'http://localhost:3000';
+  apiURL = 'https://jsonplaceholder.typicode.com/';
 
   constructor(private http: HttpClient) { }
 
