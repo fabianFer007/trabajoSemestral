@@ -1,9 +1,9 @@
-import { Component,ViewChild,ElementRef, OnInit } from '@angular/core';
+import { Component,ViewChild,ElementRef} from '@angular/core';
 import { Router, NavigationExtras } from '@angular/router';
 import { IonAvatar,IonModal } from '@ionic/angular';
 import type { Animation } from '@ionic/angular';
 import { AnimationController } from '@ionic/angular';
-import { ApiService } from '../servicios/api.service';
+import { AutentificarService } from '../servicios/autentificar.service';
 
 @Component({
   selector: 'app-home',
@@ -16,8 +16,12 @@ export class HomePage {
   @ViewChild(IonModal) modal!: IonModal;
 
   private animation!:Animation;
-  constructor(private router: Router,private animationCtrl:AnimationController) { }
+  constructor(private router: Router,private animationCtrl:AnimationController, private auth: AutentificarService) { }
+  //private auth: AutentificarService
+  //si lo pongo en el constructor no se ve la pagina (╯°□°）╯︵ ┻━┻
   public mensaje = "";
+
+  public estado: String = "";
   
   public alertButtons = ['OK'];
 
@@ -44,23 +48,26 @@ export class HomePage {
     this.animation.play();
   }
 
+
   enviarInformacion() {
-    if (this.user.usuario != "") {
-      let navigationExtras: NavigationExtras = {
-        state: { user: this.user }
+    this.auth.login(this.user.usuario, this.user.password).then(() => {
+      if (this.auth.valido) {
+        let navigationExtras: NavigationExtras = {
+          state: { user: this.user }
+        }
+        this.router.navigate(['/login'], navigationExtras);
+      } else {
+        this.mensaje = "Debe ingresar sus credenciales";
       }
-      this.router.navigate(['/inicio'], navigationExtras);
-    } else {
-      this.mensaje = "Debe ingresar sus credenciales";
-    }
+    });
   }
 
   mostrarConsola() {
     console.log(this.user);
     if (this.user.usuario != "" && this.user.password != "") {
-      this.mensaje = "Usuario Conectado";
+      this.mensaje = "Conectado";
     } else {
-      this.mensaje = "Usuario y contraseña deben tener algun valor"
+      this.mensaje = "Mail y contraseña deben tener algun valor"
     }
   }
 
@@ -69,8 +76,15 @@ export class HomePage {
   }
 
   confirm() {
-    this.mensaje="Registro Exitoso"
-    this.modal.dismiss(this.user.usuario, 'confirm');
+    this.auth.register(this.user.usuario, this.user.password).then((res) => {
+      if (res) {
+        this.estado = "Usuario Existente";
+      } else {
+        this.mensaje = "Registro Exitoso";
+        this.modal.dismiss(this.user.usuario, 'confirm');
+      }
+    })
   }
+
 
 }

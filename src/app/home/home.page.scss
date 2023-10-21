@@ -54,3 +54,16 @@ ion-card{
   margin-right: 250px;
 }
 
+#btnCrearAccount{
+  --background: #7ad172;
+  --background-hover: #7ad172;
+  --background-activated: #7ad172;
+  --background-focused: #7ad172;
+  
+  --color: white;
+  --ripple-color: rgb(0, 97, 24);
+  width: 250px;
+  --padding-top: 20px;
+  --padding-bottom: 20px;
+}
+
