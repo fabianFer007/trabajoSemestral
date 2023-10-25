@@ -66,7 +66,7 @@ export class HomePage {
       if (res) {
         this.estado = "Usuario Existente";
       } else {
-        this.mensaje = "Registro Exitoso";
+        this.mensaje = "Registrado";
         this.modal.dismiss(this.user.usuario, 'confirm');
       }
     })
