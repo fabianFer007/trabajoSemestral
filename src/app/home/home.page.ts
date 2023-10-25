@@ -11,42 +11,28 @@ import { AutentificarService } from '../servicios/autentificar.service';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  @ViewChild(IonAvatar,{read:ElementRef}) avatar!:ElementRef<HTMLIonAvatarElement>;
-  
+
+
+  //Cosas que faltan:
+  //Crear una animacion
+
   @ViewChild(IonModal) modal!: IonModal;
 
-  private animation!:Animation;
-  constructor(private router: Router,private animationCtrl:AnimationController, private auth: AutentificarService) { }
-  //private auth: AutentificarService
-  //si lo pongo en el constructor no se ve la pagina (╯°□°）╯︵ ┻━┻
+  constructor(private router: Router, private auth: AutentificarService) { }
+
   public mensaje = "";
 
   public estado: String = "";
   
   public alertButtons = ['OK'];
 
-  ngAfterViewInit() {
-    this.animation = this.animationCtrl.create()
-    .addElement(this.avatar.nativeElement)
-    .duration(5000)
-    .iterations(Infinity)
-    .keyframes([
-      {offset:0, transform:'translateX(0px)',opacity:'1'},
-      {offset:0.25, transform:'translateX(100px)',opacity:'0.2'},
-      {offset:0.50, transform:'translateX(0px)',opacity:'1'},
-      {offset:0.75, transform:'translateX(-100px)',opacity:'0.2'},
-      {offset:1, transform:'translateX(0px)',opacity:'1'},
-    ])
-  }
+
 
   user = {
     usuario: "",
     password: ""
   }
   
-  playAvatar(){
-    this.animation.play();
-  }
 
 
   enviarInformacion() {
