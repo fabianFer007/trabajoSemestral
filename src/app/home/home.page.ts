@@ -13,7 +13,7 @@ import { AutentificarService } from '../servicios/autentificar.service';
 export class HomePage {
 
 
-  //Cosas que faltan:
+  //Cosas que hacer:
   //Crear una animacion
 
   @ViewChild(IonModal) modal!: IonModal;
@@ -41,7 +41,7 @@ export class HomePage {
         let navigationExtras: NavigationExtras = {
           state: { user: this.user }
         }
-        this.router.navigate(['/login'], navigationExtras);
+        this.router.navigate(['/inicio'], navigationExtras);
       } else {
         this.mensaje = "Debe ingresar sus credenciales";
       }

@@ -57,7 +57,7 @@ export class AutentificarService {
   //log out
   logout() {
     this.valido = false;
-    this.route.navigate(['/home']);
+    this.route.navigate(['/inicio']);
   }
   
 }
