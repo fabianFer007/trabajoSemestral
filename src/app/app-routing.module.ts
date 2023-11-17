@@ -20,7 +20,11 @@ const routes: Routes = [
     path: 'inicio',
     canActivate: [AuthGuard],
     loadChildren: () => import('./inicio/inicio.module').then( m => m.InicioPageModule)
+  },  {
+    path: 'codigo-qr',
+    loadChildren: () => import('./codigo-qr/codigo-qr.module').then( m => m.CodigoQRPageModule)
   },
+
 
 ];
 
