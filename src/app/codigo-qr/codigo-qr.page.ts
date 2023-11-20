@@ -12,6 +12,7 @@ export class CodigoQRPage implements OnDestroy {
   qrCodeString = 'qr code message';
   scannedResult: any;
   content_visibility = '';
+  contador: number=0;
   
 
   constructor() { }
@@ -85,5 +86,12 @@ export class CodigoQRPage implements OnDestroy {
   ngOnDestroy(): void {
     this.stopScan();
   }
+
+
+  acumulador(){
+    this.contador++;
+    console.log(this.contador);
+  }
+
 
 }
