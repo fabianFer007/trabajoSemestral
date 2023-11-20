@@ -9,7 +9,7 @@ import { BarcodeScanner } from '@capacitor-community/barcode-scanner';
 export class CodigoQRPage implements OnDestroy {
 
 
-  qrCodeString = 'qr code message';
+  qrCodeString = 'Asistencia Registrada';
   scannedResult: any;
   content_visibility = '';
   contador: number=0;
