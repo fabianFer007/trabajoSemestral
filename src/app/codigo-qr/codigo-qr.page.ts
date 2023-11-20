@@ -16,7 +16,7 @@ export class CodigoQRPage implements OnDestroy {
 
   constructor() { }
 
-  //
+  
   async checkPermission(): Promise<boolean> {
     try {
         const status = await BarcodeScanner.checkPermission({ force: true });
@@ -30,6 +30,21 @@ export class CodigoQRPage implements OnDestroy {
         return false; // Devuelve false en caso de error
     }
   }
+
+  //check de codigo original (no funciona)
+  // async checkPermission() {
+  //   try {
+  //     // check or request permission
+  //     const status = await BarcodeScanner.checkPermission({ force: true });
+  //     if (status.granted) {
+  //       // the user granted permission
+  //       return true;
+  //     }
+  //     return false;
+  //   } catch(e) {
+  //     console.log(e);
+  //   }
+  // }
 
 
   //
