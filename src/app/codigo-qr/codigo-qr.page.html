@@ -18,8 +18,8 @@
     </ion-card-content>
   </ion-card>
 
-  <ion-button expand="block" class="ion-margin" (click)="startScan()">Escanear codigo QR</ion-button>
-
+  <ion-button expand="block" class="ion-margin" (click)="startScan()" id="btnEscanear">Escanear codigo QR</ion-button>
+  <ion-button href="/home" class="ion-margin" expand="block" id="btnVolver">Volver a Inicio</ion-button>
   <ion-item *ngIf="scannedResult">
     <ion-label class="ion-text-wrap">Scanned Result: {{scannedResult}}</ion-label>
   </ion-item>
