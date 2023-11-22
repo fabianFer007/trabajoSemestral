@@ -56,12 +56,12 @@ export class CodigoQRPage implements OnDestroy {
         return;
       }
       await BarcodeScanner.hideBackground();
-      //document.querySelector('body').classList.add('scanner-active');
+      //document.querySelector('body')?.classList.add('scanner-active');
       this.content_visibility = 'hidden';
       const result = await BarcodeScanner.startScan();
       console.log(result);
       BarcodeScanner.showBackground();
-      //document.querySelector('body').classList.remove('scanner-active');
+      //document.querySelector('body')?.classList.remove('scanner-active');
       this.content_visibility = '';
       if(result?.hasContent) {
         this.scannedResult = result.content;
